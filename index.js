@@ -93,9 +93,14 @@ filter method to return a new array of only the movie entry objects that
 have a runtime greater than 2 hours.
 */
 
-function longerThanTwoHours(){
-
+function longerThanTwoHours(array){
+return array.filter(movie => {
+  if (movie.runtime.length > 120)
+return true;
+})
 }
+
+//console.log(longerThanTwoHours(lbDiary))
 
 /*
 Create a function called filterByCommenter that takes in an array of movie
@@ -108,10 +113,18 @@ filterByCommenter(lbDiary, 'elizabeth-dane');
 // => [{Rule of Jenny Pen}, {Mickey 17}]
 */
 
-function filterByCommenter(){
-
+function filterByCommenter(array, string){
+  return array.filter(movie => {
+    for(let i = 0; i < movie.comments.length; i++){
+      if(movie.comments[i].username === string){
+        return true;
+      }
+    }
+    return false;
+  })
 }
 
+//console.log(filterByCommenter(lbDiary, 'elizabeth-dane'))
 /*
 Create a function called getRuntimes that takes in an array of movie
 entries objects as you see above. This function should use the native 
@@ -122,9 +135,13 @@ getRuntimes(lbDiary);
 // => ['104 minutes', '137 minutes', '98 minutes', '122 minutes']
 */
 
-function getRuntimes(){
-
+function getRuntimes(array){
+  return array.map(movie => {
+    return `${movie.runtime.length} minutes`
+  })
 }
+
+//console.log(getRuntimes(lbDiary))
 
 /*
 Create a function called getCommentCharacters that takes in an array of movie
@@ -138,10 +155,21 @@ getCommentCharacters(lbDiary)
 // => ['LR', 'N', 'I', 'T]
 */
 
-function getCommentCharacters(){
-
+function getCommentCharacters(array){
+  return array.map(movie => {
+    let output = ''
+    for (let i = 0; i < movie.comments.length; i++){
+      
+      let firstLetter = movie.comments[i].text[0];
+      output += firstLetter
+      
+    }
+    return output;
+  })
+  
 }
 
+//console.log(getCommentCharacters(lbDiary))
 /*
 Create a function called getObjects that takes in an array of movie
 entries objects as you see above. This function should use the native 
@@ -156,9 +184,17 @@ example object
 }
 */
 
-function getObjects(){
-  
+function getObjects(array){
+  return array.reduce((acc, current) => {
+    let obj = {};
+    obj.movie = `${current.title} (${current.year})`
+    obj.genre = `${current.genres[0]}`;
+    acc.push(obj);
+    return acc;
+  }, [])
 }
+
+//console.log(getObjects(lbDiary))
 
 /*
 Create a function called getCommentsByLength that takes in an array of movie
@@ -170,6 +206,15 @@ example output
 getCommentsByLength(lbDiary);
 */
 
-function getCommentsByLength(){
-  
+function getCommentsByLength(array){
+  return array.reduce((acc, current) => {
+    for (let i = 0; i < current.comments.length; i++){
+      if(current.comments[i].text.length > 40){
+        acc.push(current.comments[i].text)
+      }
+      return acc;
+    }
+  }, [])
 }
+
+console.log(getCommentsByLength(lbDiary))
