@@ -3,7 +3,7 @@ const lbDiary = [
     title: 'The Rule of Jenny Pen',
     director: 'James Ashcroft',
     year: 2025,
-    genres: ['Drama', 'Horror', 'Thriller'],
+    genres: ['Horror', 'Drama', 'Thriller'],
     runtime: {
       unit: 'Minutes',
       length: 104
@@ -48,7 +48,7 @@ const lbDiary = [
     title: 'The Monkey',
     director: 'Osgood Perkins',
     year: 2025,
-    genres: ['Comedy', 'Horror'],
+    genres: ['Horror', 'Comedy'],
     runtime: {
       unit: 'Minutes',
       length: 98
@@ -56,13 +56,18 @@ const lbDiary = [
     stars: 2,
     entryLogged: 'February 22, 2025',
     review: "Despite the grotesquery, it feels oddly toothless and lacking stakes.",
-    comments: []
+    comments: [
+      {
+        username: 'john-trent',
+        text: "I also didn't find it particularly funny."
+      }
+    ]
   },
   {
     title: 'Okja',
     director: 'Bong Joon Ho',
     year: 2017,
-    genres: ['Drama', 'Science Fiction', 'Adventure'],
+    genres: ['Science Fiction', 'Drama', 'Adventure'],
     runtime: {
       unit: 'Minutes',
       length: 122
@@ -80,3 +85,91 @@ const lbDiary = [
   }
 ];
 
+
+/*
+Create a function called longerThanTwoHours that takes in an array of 
+movie entry objects as you see above. This function should use the native 
+filter method to return a new array of only the movie entry objects that 
+have a runtime greater than 2 hours.
+*/
+
+function longerThanTwoHours(){
+
+}
+
+/*
+Create a function called filterByCommenter that takes in an array of movie
+entries objects as you see above and a string representing a username. This
+function should use the native filter method to return a new array of only
+the movie entry objects that have a comment by the input commenter.
+
+example output:
+filterByCommenter(lbDiary, 'elizabeth-dane');
+// => [{Rule of Jenny Pen}, {Mickey 17}]
+*/
+
+function filterByCommenter(){
+
+}
+
+/*
+Create a function called getRuntimes that takes in an array of movie
+entries objects as you see above. This function should use the native 
+map method to return a new array of only the runtimes of each film as a string.
+
+example output:
+getRuntimes(lbDiary);
+// => ['104 minutes', '137 minutes', '98 minutes', '122 minutes']
+*/
+
+function getRuntimes(){
+
+}
+
+/*
+Create a function called getCommentCharacters that takes in an array of movie
+entries objects as you see above. This function should use the native 
+map method to return a new array of strings. As the function iterates over
+every movie entry object, it should iterate through every comment and add the
+first letter of the text of every comment to a string.
+
+example output:
+getCommentCharacters(lbDiary)
+// => ['LR', 'N', 'I', 'T]
+*/
+
+function getCommentCharacters(lbDiary){
+
+}
+
+/*
+Create a function called getObjects that takes in an array of movie
+entries objects as you see above. This function should use the native 
+reduce method to return a new array of objects. Each object should have a key
+of `movie` set to the movie's title and release year. It should also have a
+key of `genre` set to the first genre listed in the genres property.
+
+example object
+{
+  movie: 'The Rule of Jenny Pen (2025)'
+  genre: 'Horror'
+}
+*/
+
+function getObjects(lbDiary){
+  
+}
+
+/*
+Create a function called getCommentsByLength that takes in an array of movie
+entries objects as you see above. This function should use the native 
+reduce method to return a new array of the text of the comment objects that have
+more than 40 characters.
+
+example output
+getCommentsByLength(lbDiary);
+*/
+
+function getCommentsByLength(lbDiary){
+  
+}
