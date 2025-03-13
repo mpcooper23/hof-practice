@@ -138,7 +138,7 @@ getCommentCharacters(lbDiary)
 // => ['LR', 'N', 'I', 'T]
 */
 
-function getCommentCharacters(lbDiary){
+function getCommentCharacters(){
 
 }
 
@@ -156,7 +156,7 @@ example object
 }
 */
 
-function getObjects(lbDiary){
+function getObjects(){
   
 }
 
@@ -170,6 +170,6 @@ example output
 getCommentsByLength(lbDiary);
 */
 
-function getCommentsByLength(lbDiary){
+function getCommentsByLength(){
   
 }
